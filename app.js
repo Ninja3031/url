@@ -16,14 +16,11 @@ dotenv.config("./.env")
 const app = express();
 
 app.use(cors({
-    origin: [
-        'http://localhost:5173', // local development frontend
-        'https://url-shortner-94rb.vercel.app', // deployed frontend
-        'https://url-shortner-xgdk.vercel.app' // deployed backend (for self-requests)
-    ],
-    credentials: true, // 👈 this allows cookies to be sent
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Cookie']
+  origin: [
+    "https://url-sigma-rosy.vercel.app", // your frontend's deployed URL
+    "http://localhost:5173"              // (optional) for local dev
+  ],
+  credentials: true
 }));
 
 app.use(express.json())
